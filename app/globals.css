@@ -1,0 +1,699 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+  --error-color: #ff6068;
+  --background-color: #151c33;
+  --base-color: #ffffff;
+  --color-shade-1: #aaaebf;
+  --color-shade-2: #3d476d;
+  --brand-color: #ff2e4c;
+  --brand-color-shade-1: #d52845;
+  --brand-color-shade-1: #d62a4c;
+  --brand-contrast-color: #232a3f;
+  --link-color: #b3cdff;
+  --border-radius: 20px;
+  --font-size: 14px;
+  --font-weight: 400px;
+  --h1-font-size: 24px;
+  --h2-font-size: 14px;
+  --h-font-weight: 600px;
+  --font-family: "IBM Plex Sans", sans-serif;
+  --paragraph: #ced4da;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hanko_container {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  box-sizing: border-box;
+}
+
+.hanko_content {
+  box-sizing: border-box;
+  flex: 0 1 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.hanko_footer {
+  padding: var(--item-margin, 0.5rem 0);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.hanko_footer :nth-child(1) {
+  float: left;
+}
+
+.hanko_footer :nth-child(2) {
+  float: right;
+}
+
+.hanko_form {
+  display: flex;
+  flex-grow: 1;
+}
+
+.hanko_form .hanko_ul {
+  flex-grow: 1;
+  margin: var(--item-margin, 0.5rem 0);
+  padding-inline-start: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.hanko_form .hanko_li {
+  display: flex;
+  min-width: 100%;
+  flex-grow: 1;
+  flex-basis: min-content;
+  justify-conten: center;
+}
+
+.hanko_button {
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  padding: 0 10px;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 1px;
+  white-space: nowrap;
+  width: 100%;
+  min-width: 120px;
+  height: 34px;
+  outline: none;
+  cursor: pointer;
+  transition: 150ms ease-in-out all;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.hanko_button:disabled {
+  cursor: default;
+}
+
+.hanko_button.hanko_primary {
+  color: var(--base-color);
+  background: var(--brand-color);
+  border-color: var(--brand-color);
+}
+
+.hanko_button.hanko_primary:hover {
+  color: var(--base-color);
+  background: var(--brand-color-shade-1);
+  border-color: var(--brand-color-shade-1);
+}
+
+.hanko_button.hanko_primary:focus {
+  color: var(--base-color);
+  background: var(--brand-color);
+  border-color: var(--base-color);
+}
+
+.hanko_button.hanko_primary:disabled {
+  color: var(--color-shade-1);
+  background: var(--color-shade-2);
+  border-color: var(--color-shade-1);
+}
+
+.hanko_button.hanko_secondary {
+  color: var(--base-color);
+  background: var(--brand-contrast-color);
+  border-color: var(--base-color);
+}
+
+.hanko_button.hanko_secondary:hover {
+  color: var(--base-color);
+  background: var(--color-shade-2, #e5e6ef);
+  border-color: var(--base-color);
+}
+
+.hanko_button.hanko_secondary:focus {
+  color: var(--base-color);
+  background: var(--brand-contrast-color);
+  border-color: var(--brand-color);
+}
+
+.hanko_button.hanko_secondary:disabled {
+  color: var(--color-shade-1);
+  background: var(--color-shade-2);
+  border-color: var(--color-shade-1);
+}
+
+.hanko_inputWrapper {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  min-width: var(--input-min-width, 14em);
+  max-width: 100%;
+}
+
+.hanko_input {
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  border-radius: var(--border-radius);
+  border: solid 1px var(--color-shade-1);
+  height: 34px;
+  border-color: var(--color-shade-1);
+  background: var(--brand-contrast-color);
+  padding: 0 12px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.1s ease-out;
+}
+
+.hanko_input:-webkit-autofill,
+.hanko_input:-webkit-autofill:hover,
+.hanko_input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--base-color);
+  -webkit-box-shadow: 0 0 0 50px var(--brand-contrast-color) inset;
+}
+
+.hanko_input::-ms-reveal,
+.hanko_input::-ms-clear {
+  display: none;
+}
+
+.hanko_input::placeholder {
+  color: var(--color-shade-1);
+}
+
+.hanko_input:focus {
+  color: var(--base-color);
+  border-color: var(--base-color);
+}
+
+.hanko_input:disabled {
+  color: var(--color-shade-1);
+  background: var(--color-shade-2);
+  border-color: var(--color-shade-1);
+}
+
+.hanko_passcodeInputWrapper {
+  flex-grow: 1;
+  min-width: var(--input-min-width, 14em);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hanko_passcodeInputWrapper .hanko_passcodeDigitWrapper {
+  flex-grow: 1;
+  margin: 0 0.2rem;
+}
+
+.hanko_passcodeInputWrapper .hanko_passcodeDigitWrapper:last-child {
+  margin: 0;
+}
+
+.hanko_passcodeInputWrapper .hanko_passcodeDigitWrapper .hanko_input {
+  text-align: center;
+  border-radius: 4px;
+  width: 34px;
+  height: 34px;
+  color: var(--color-shade-1);
+}
+
+.hanko_icon,
+.hanko_loadingSpinnerWrapper .hanko_loadingSpinner,
+.hanko_loadingSpinnerWrapperIcon .hanko_loadingSpinner,
+.hanko_exclamationMark,
+.hanko_checkmark {
+  display: inline-block;
+  fill: var(--color-shade-1);
+  width: 18px;
+}
+
+.hanko_icon.hanko_secondary,
+.hanko_loadingSpinnerWrapper .hanko_secondary.hanko_loadingSpinner,
+.hanko_loadingSpinnerWrapperIcon .hanko_secondary.hanko_loadingSpinner,
+.hanko_secondary.hanko_exclamationMark,
+.hanko_secondary.hanko_checkmark {
+  fill: var(--base-color);
+}
+
+.hanko_icon.hanko_disabled,
+.hanko_loadingSpinnerWrapper .hanko_disabled.hanko_loadingSpinner,
+.hanko_loadingSpinnerWrapperIcon .hanko_disabled.hanko_loadingSpinner,
+.hanko_disabled.hanko_exclamationMark,
+.hanko_disabled.hanko_checkmark {
+  fill: var(--color-shade-1);
+}
+
+.hanko_checkmark {
+  fill: var(--link-color);
+}
+
+.hanko_checkmark.hanko_secondary {
+  fill: var(--color-shade-1);
+}
+
+.hanko_checkmark.hanko_fadeOut {
+  animation: hanko_fadeOut ease-out 1.5s forwards !important;
+}
+
+@keyframes hanko_fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.hanko_exclamationMark {
+  fill: var(--error-color, #e82020);
+  padding-right: 5px;
+}
+
+.hanko_loadingSpinnerWrapperIcon {
+  justify-content: flex-start;
+  width: 100%;
+  column-gap: 10px;
+  margin-left: 10px;
+}
+
+.hanko_loadingSpinnerWrapper,
+.hanko_loadingSpinnerWrapperIcon {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  margin: 0 5px;
+}
+
+.hanko_loadingSpinnerWrapper .hanko_loadingSpinner,
+.hanko_loadingSpinnerWrapperIcon .hanko_loadingSpinner {
+  fill: var(--color-shade-1);
+  animation: hanko_spin 500ms ease-in-out infinite;
+}
+
+.hanko_loadingSpinnerWrapper.hanko_secondary,
+.hanko_secondary.hanko_loadingSpinnerWrapperIcon {
+  fill: var(--color-shade-1, #8f9095);
+}
+
+@keyframes hanko_spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hanko_googleIcon.hanko_disabled {
+  fill: var(--color-shade-1, #8f9095);
+}
+
+.hanko_googleIcon.hanko_blue {
+  fill: #4285f4;
+}
+
+.hanko_googleIcon.hanko_green {
+  fill: #34a853;
+}
+
+.hanko_googleIcon.hanko_yellow {
+  fill: #fbbc05;
+}
+
+.hanko_googleIcon.hanko_red {
+  fill: #ea4335;
+}
+
+.hanko_headline {
+  color: var(--base-color);
+  font-family: var(--font-family);
+  text-align: left;
+  letter-spacing: 0;
+  font-style: normal;
+  line-height: 1.1;
+}
+
+.hanko_headline.hanko_grade1 {
+  font-size: var(--h1-font-size);
+  font-weight: var(--h-font-weight);
+  margin: var(--headline1-margin, 0 0 0.5rem);
+}
+
+.hanko_headline.hanko_grade2 {
+  font-size: var(--h2-font-size);
+  font-weight: var(--h-font-weight);
+  margin: var(--headline2-margin, 1rem 0 0.25rem);
+}
+
+.hanko_errorMessage {
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  font-family: var(--font-family, sans-serif);
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  color: var(--error-color, #e82020);
+  background: var(--brand-contrast-color);
+  padding: 20px 15px;
+  margin: 25px 0;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.hanko_errorMessage > span:first-child {
+  display: inline-flex;
+}
+
+.hanko_errorMessage[hidden] {
+  display: none;
+}
+
+.hanko_paragraph {
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  font-family: var(--font-family, sans-serif);
+  color: var(--paragraph);
+  margin: var(--item-margin, 0.5rem 0);
+  text-align: left;
+  word-break: break-word;
+}
+
+.dion {
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  font-family: var(--font-family, sans-serif);
+  width: 100%;
+  overflow: hidden;
+}
+
+.hanko_accordion .hanko_accordionItem {
+  color: var(--base-color);
+  margin: 0.25rem 0;
+  overflow: hidden;
+}
+
+.hanko_accordion .hanko_accordionItem .hanko_label {
+  border-radius: var(--border-radius, 4px);
+  border-style: none;
+  height: var(--item-height, 34px);
+  background: var(--brand-contrast-color);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.35s;
+}
+
+.hanko_accordion .hanko_accordionItem .hanko_label .hanko_labelText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hanko_accordion
+  .hanko_accordionItem
+  .hanko_label
+  .hanko_labelText
+  .hanko_description {
+  color: var(--color-shade-1);
+}
+
+.hanko_accordion .hanko_accordionItem .hanko_label.hanko_dropdown {
+  color: var(--link-color, #506cf0);
+  justify-content: flex-start;
+  width: fit-content;
+}
+
+.hanko_accordion .hanko_accordionItem .hanko_label:hover {
+  color: var(--base-color);
+  background: var(--brand-color-shade-1, #6b84fb);
+}
+
+.hanko_accordion .hanko_accordionItem .hanko_label:hover .hanko_description {
+  color: var(--base-color);
+}
+
+.hanko_accordion .hanko_accordionItem .hanko_label:hover.hanko_dropdown {
+  color: var(--link-color, #506cf0);
+  background: none;
+}
+
+.hanko_accordion .hanko_accordionItem .hanko_label:not(.hanko_dropdown)::after {
+  content: "❯";
+  width: 1rem;
+  text-align: center;
+  transition: all 0.35s;
+}
+
+.hanko_accordion .hanko_accordionItem .hanko_label.hanko_dropdown::before {
+  content: "+";
+  width: 1em;
+  text-align: center;
+  transition: all 0.35s;
+}
+
+.hanko_accordion .hanko_accordionItem .hanko_accordionInput {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.hanko_accordion
+  .hanko_accordionItem
+  .hanko_accordionInput:checked
+  + .hanko_label {
+  color: var(--base-color);
+  background: var(--brand-color, #506cf0);
+}
+
+.hanko_accordion
+  .hanko_accordionItem
+  .hanko_accordionInput:checked
+  + .hanko_label
+  .hanko_description {
+  color: var(--base-color);
+}
+
+.hanko_accordion
+  .hanko_accordionItem
+  .hanko_accordionInput:checked
+  + .hanko_label.hanko_dropdown {
+  color: var(--link-color, #506cf0);
+  background: none;
+}
+
+.hanko_accordion
+  .hanko_accordionItem
+  .hanko_accordionInput:checked
+  + .hanko_label:not(.hanko_dropdown)::after {
+  transform: rotate(90deg);
+}
+
+.hanko_accordion
+  .hanko_accordionItem
+  .hanko_accordionInput:checked
+  + .hanko_label.hanko_dropdown::before {
+  content: "-";
+}
+
+.hanko_accordion
+  .hanko_accordionItem
+  .hanko_accordionInput:checked
+  + .hanko_label
+  ~ .hanko_accordionContent {
+  margin: 0.25rem 1rem;
+  opacity: 1;
+  max-height: 100vh;
+}
+
+.hanko_accordion .hanko_accordionItem .hanko_accordionContent {
+  max-height: 0;
+  margin: 0 1rem;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.35s;
+}
+
+.hanko_accordion
+  .hanko_accordionItem
+  .hanko_accordionContent.hanko_dropdownContent {
+  border-style: none;
+}
+
+.hanko_link {
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  font-family: var(--font-family, sans-serif);
+  color: var(--link-color);
+  text-decoration: none;
+  cursor: pointer;
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+}
+
+.hanko_link:hover {
+  text-decoration: underline;
+}
+
+.hanko_link.hanko_disabled {
+  color: var(--color, #171717);
+  pointer-events: none;
+  cursor: default;
+}
+
+.hanko_link.hanko_danger {
+  color: var(--error-color, #e82020) !important;
+}
+
+.hanko_linkWrapper {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+}
+
+.hanko_linkWrapper.hanko_reverse {
+  flex-direction: row-reverse;
+}
+
+.hanko_divider {
+  display: flex;
+  visibility: visible;
+  color: var(--color-shade-1);
+  margin: 20px 0;
+}
+
+.hanko_divider .hanko_line {
+  border-bottom-style: var(--border-style, solid);
+  border-bottom-width: var(--border-width, 1px);
+  color: inherit;
+  font: inherit;
+  width: 100%;
+}
+
+.hanko_divider .hanko_text {
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  font-family: var(--font-family, sans-serif);
+  background: var(--brand-contrast-color);
+  padding: var(--divider-padding, 0 42px);
+  line-height: 0.1em;
+}
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 23px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 15px;
+  left: 13px;
+  background: var(--base-color);
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90ged);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+.open .hamburger-top,
+.open .hamburger-bottom {
+  height: 1px;
+}
+
+hanko-profile
+  .hanko_accordionContent.hanko_dropdownContent
+  .hanko_form
+  .hanko_li {
+  flex-grow: 1;
+  min-width: auto;
+  margin: auto;
+}
+
+hanko-profile .hanko_content .hanko_form .hanko_li {
+  flex-grow: 1;
+  min-width: auto;
+  margin: auto;
+}
+
+hanko-profile
+  .hanko_accordionContent.hanko_dropdownContent
+  .hanko_form
+  .hanko_li
+  .hanko_button {
+  max-width: 165px;
+}
+
+hanko-profile .hanko_button.hanko_dangerous {
+  margin: 0 0 0 15px;
+  max-width: 165px;
+  color: var(--base-color);
+  background: var(--brand-contrast-color);
+  border-color: var(--base-color);
+}
+
+hanko-profile .hanko_button.hanko_dangerous:hover {
+  color: var(--base-color);
+  background: var(--color-shade-2, #e5e6ef);
+  border-color: var(--base-color);
+}
+
+hanko-profile .hanko_button.hanko_dangerous:focus {
+  color: var(--base-color);
+  background: var(--brand-contrast-color);
+  border-color: var(--brand-color);
+}
+
+hanko-profile .hanko_button.hanko_dangerous:disabled {
+  color: var(--color-shade-1);
+  background: var(--color-shade-2);
+  border-color: var(--color-shade-1);
+}
