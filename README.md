@@ -2,9 +2,7 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
-
-### Prerequisites
+## Prerequisites:
 
 ### If using Hanko Cloud
 
@@ -21,6 +19,8 @@ Create the `.env` file in the root directory, set up the correct environment var
 
 - `DATABASE_URL="file:./dev.db"`: this is the URL to the SQLite database file that will be created inside the `prisma` directory with the name `dev.db`
 - `NEXT_PUBLIC_HANKO_API_URL`: this is the URL of the Hanko API, you can find it in your [Hanko Cloud](https://cloud.hanko.io/login) dashboard.
+
+## Getting Started
 
 ### 1.Install dependencies
 

@@ -17,8 +17,6 @@ export default async function Todo() {
     },
   });
 
-  console.log(todos);
-
   return (
     <main className="bg-background-color flex flex-col min-h-screen justify-between text-base-color relative">
       <div className="top-8 flex justify-between items-center absolute w-full mx-auto px-6 lg:hidden ">
