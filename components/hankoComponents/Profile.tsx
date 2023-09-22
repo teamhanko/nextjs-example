@@ -9,7 +9,7 @@ export default function HankoProfile() {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    register(hankoApi ?? "", { shadow: false, injectStyles: false }).catch(
+    register(hankoApi ?? "").catch(
       setError
     );
   }, []);

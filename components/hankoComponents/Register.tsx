@@ -30,9 +30,7 @@ export default function HankoAuth() {
   );
 
   useEffect(() => {
-    register(hankoApi ?? "", { shadow: false, injectStyles: false }).catch(
-      setError
-    );
+    register(hankoApi ?? "").catch(setError);
   }, []);
 
   return <hanko-auth />;
