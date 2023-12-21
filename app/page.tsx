@@ -1,6 +1,8 @@
 import { Topper } from "@/components/Topper";
 import { Bottom } from "@/components/Bottom";
-import HankoAuth from "@/components/hankoComponents/Register";
+import dynamic from "next/dynamic";
+
+const HankoAuth = dynamic(() => import('@/components/hankoComponents/Register'), { ssr: false })
 
 const Home = () => {
   return (

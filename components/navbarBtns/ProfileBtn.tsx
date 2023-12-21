@@ -1,7 +1,11 @@
 "use client";
 import { useState } from "react";
 import { classNames } from "@/lib/classNames";
-import HankoProfile from "@/components/hankoComponents/Profile";
+import dynamic from "next/dynamic";
+
+
+const HankoProfile = dynamic(() => import('@/components/hankoComponents/Profile'), { ssr: false })
+
 
 export function ProfileBtn() {
   const [openState, setOpenState] = useState(false);

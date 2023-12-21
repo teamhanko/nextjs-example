@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.1.1",
-    "@teamhanko/hanko-elements": "^0.8.2",
+    "@teamhanko/hanko-elements": "^0.9.0",
     "@types/node": "20.5.0",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
